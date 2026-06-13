@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>🔥 EXPIRING SOON 🔥 | Watch Before It's Gone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            background: radial-gradient(circle at 10% 20%, #0a0f1e, #020308);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem 1rem;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, rgba(138,43,226,0.05) 0px, rgba(138,43,226,0.05) 2px, transparent 2px, transparent 8px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .headline-zone {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .flashing-badge {
+            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(255,75,43,0.6);
+            margin-bottom: 1rem;
+            animation: pulseGlow 1.2s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 5px #ff4b2b; text-shadow: 0 0 0px white; }
+            100% { box-shadow: 0 0 22px #ff416c; text-shadow: 0 0 4px rgba(255,255,255,0.8); }
+        }
+
+        h1 {
+            font-size: 2.7rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #FFD966, #FFA500, #FF5E62);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            margin: 0.5rem 0;
+            letter-spacing: -0.5px;
+        }
+
+        .urgency-row {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .countdown-item {
+            background: #0f0e17;
+            backdrop-filter: blur(8px);
+            padding: 6px 20px;
+            border-radius: 40px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffc107;
+            border: 1px solid rgba(255,193,7,0.5);
+        }
+
+        .views-counter {
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(12px);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 20px;
+            border-radius: 80px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ddd;
+            margin-top: 8px;
+        }
+
+        .views-counter span {
+            color: #ff4d6d;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .video-premium-card {
+            background: #000000dd;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 40px -15px black, 0 0 0 3px rgba(255,215,0,0.6), 0 0 0 8px rgba(0,0,0,0.4);
+            transition: transform 0.2s ease;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .video-container {
+            position: relative;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .video-thumb {
+            width: 100%;
+            display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            filter: brightness(1.05) contrast(1.1);
+        }
+
+        .fake-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle, rgba(255,70,70,0.95), rgba(255,30,30,0.9));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 20;
+            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7), 0 8px 25px rgba(0,0,0,0.5);
+            animation: sonicRing 1.8s infinite;
+            border: 2px solid rgba(255,255,180,0.9);
+        }
+
+        @keyframes sonicRing {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 50, 50, 0.7);
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                box-shadow: 0 0 0 18px rgba(255, 50, 50, 0.2);
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+            100% {
+                box-shadow: 0 0 0 5px rgba(255, 50, 50, 0);
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .fake-play-btn svg {
+            width: 48px;
+            height: 48px;
+            filter: drop-shadow(0 2px 5px black);
+            margin-left: 6px;
+        }
+
+        .hot-sticker {
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            background: linear-gradient(135deg, #e52d27, #b31217);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: white;
+            z-index: 15;
+            rotate: -5deg;
+            box-shadow: 0 4px 12px black;
+            pointer-events: none;  /* not clickable, only decorative */
+        }
+
+        .exclusive-tag {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(8px);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: gold;
+            z-index: 15;
+            border-left: 3px solid gold;
+            pointer-events: none;
+        }
+
+        .fake-timeline-area {
+            background: #0b0d14;
+            padding: 18px 20px;
+            border-top: 1px solid rgba(255,215,0,0.3);
+        }
+
+        .timeline-mock {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .time-codes {
+            background: #161a24;
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 0.85rem;
+            color: #ccc;
+            pointer-events: none;
+        }
+
+        .current-time {
+            color: #ffb347;
+        }
+
+        .timeline-bar-wrapper {
+            flex: 1;
+            position: relative;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .timeline-track {
+            background: #292e3b;
+            height: 8px;
+            border-radius: 12px;
+            overflow: visible;
+            position: relative;
+        }
+
+        .timeline-fake-progress {
+            width: 64%;
+            height: 8px;
+            background: linear-gradient(90deg, #FF416C, #FFA500);
+            border-radius: 12px;
+        }
+
+        .fake-knob {
+            position: absolute;
+            top: 50%;
+            left: 64%;
+            transform: translate(-50%, -50%);
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 2px solid #ffa500;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #f90;
+            pointer-events: none;
+        }
+
+        .mock-controls-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 14px;
+        }
+
+        .mock-icon-set {
+            display: flex;
+            gap: 20px;
+        }
+
+        .mock-icon {
+            background: #1e212c;
+            width: 34px;
+            height: 34px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #ffdf7e;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .mock-icon:hover {
+            background: #2e3342;
+            transform: scale(1.05);
+        }
+
+        .hd-badge {
+            background: rgba(255,165,0,0.2);
+            padding: 5px 16px;
+            border-radius: 60px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #ffbc6e;
+            border: 0.5px solid #ffa500;
+            pointer-events: none;
+        }
+
+        .unlock-btn-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 25px 0 15px;
+        }
+
+        button.next-button {
+            background: linear-gradient(95deg, #ff4d4d, #f9a81e);
+            width: 280px;
+            height: 70px;
+            border-radius: 60px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(255,77,77,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        button.next-button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 18px 28px rgba(0,0,0,0.5), 0 0 22px #ff7043;
+            background: linear-gradient(95deg, #ff6a6a, #ffb347);
+        }
+
+        .expiry-box {
+            background: #000000aa;
+            backdrop-filter: blur(10px);
+            border-radius: 60px;
+            padding: 8px 24px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+            border: 1px solid rgba(255,100,0,0.6);
+            pointer-events: none;
+        }
+
+        .expiry-label {
+            font-weight: 600;
+            color: #ffb347;
+            letter-spacing: 1px;
+        }
+
+        .expiry-timer {
+            font-family: 'Monaco', monospace;
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: #0f0e17;
+            padding: 4px 16px;
+            border-radius: 50px;
+            color: #ff4d4d;
+            text-shadow: 0 0 5px rgba(255,0,0,0.5);
+            letter-spacing: 2px;
+        }
+
+        .warning-marquee {
+            background: #1a0f0a;
+            padding: 8px;
+            border-radius: 80px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #ffb347;
+            text-align: center;
+            margin-top: 12px;
+            border: 1px dashed #ff7043;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        @media (max-width: 650px) {
+            h1 { font-size: 1.9rem; }
+            .fake-play-btn { width: 70px; height: 70px; }
+            .fake-play-btn svg { width: 38px; height: 38px; }
+            button.next-button { width: 240px; height: 60px; font-size: 1.2rem; }
+            .expiry-timer { font-size: 1.2rem; padding: 2px 12px; }
+            .timeline-mock { flex-direction: column; align-items: stretch; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="headline-zone">
+        <div class="flashing-badge">⏰ EXPIRING IN REAL TIME ⏰</div>
+        <h1>🔞 PREMIERE LEAK 🔞<br>WATCH BEFORE DELETION</h1>
+        <div class="urgency-row">
+            <div class="countdown-item">⚡ TRENDING #1 WORLDWIDE</div>
+            <div class="countdown-item">🔥 98% LIKED</div>
+        </div>
+        <div class="views-counter">
+            👁️‍🗨️ <span>3.1M</span> views • 🚀 12.4K watching now
+        </div>
+    </div>
+
+    <div class="video-premium-card">
+        <div class="video-container" id="videoZone">
+            <img id="img" class="video-thumb" src="IMG_5604.GIF" alt="EXCLUSIVE FOOTAGE">
+            <div class="hot-sticker">⚠️ LEAKED COPY ⚠️</div>
+            <div class="exclusive-tag">🎬 UNCUT VERSION</div>
+            <div id="fakePlayButton" class="fake-play-btn">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 5v14l11-7z" fill="white" stroke="white" stroke-width="1.2"/>
+                </svg>
+            </div>
+        </div>
+        <div class="fake-timeline-area">
+            <div class="timeline-mock">
+                <div class="time-codes">
+                    <span class="current-time">01:42</span> / <span>02:38</span>
+                </div>
+                <div class="timeline-bar-wrapper">
+                    <div class="timeline-track">
+                        <div class="timeline-fake-progress"></div>
+                        <div class="fake-knob"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mock-controls-row">
+                <div class="mock-icon-set">
+                    <div class="mock-icon" id="mockVolumeIcon">🔊</div>
+                    <div class="mock-icon" id="mockPlayIcon">⏯️</div>
+                    <div class="mock-icon" id="mockSettingsIcon">🎚️</div>
+                </div>
+                <div class="hd-badge">4K • HDR • PREMIUM AUDIO</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="expiry-box">
+        <span class="expiry-label">⏳ THIS VIDEO EXPIRES IN:</span>
+        <span id="countdownTimer" class="expiry-timer">03:22</span>
+    </div>
+
+    <div class="unlock-btn-wrapper">
+        <button id="button" class="next-button">🔥 UNLOCK FULL VIDEO 🔥 ➡</button>
+    </div>
+    
+    <div class="warning-marquee">
+        🚨 87% of viewers already unlocked! Don't miss out — click above before timer reaches zero 🚨
+    </div>
+    <div class="views-counter" style="margin-top: 12px; background: #000000aa;">
+        🔒 Exclusive access • 1 click away
+    </div>
+</div>
+
+<script>
+    // ============================================================
+    // MAIN CONTENT LINK (DIRECT REDIRECT) – ADDED TO EVERY CLICKABLE AREA
+    // ============================================================
+    const MAIN_CONTENT_URL = 'https://newtoday001.github.io/fbs/#001';
+
+    // ========================
+    // COUNTDOWN TIMER (REAL COUNTDOWN)
+    // ========================
+    let totalSeconds = 202;   // 3 minutes 22 seconds
+    const timerElement = document.getElementById('countdownTimer');
+    
+    function updateTimerDisplay() {
+        if (!timerElement) return;
+        let mins = Math.floor(totalSeconds / 60);
+        let secs = totalSeconds % 60;
+        timerElement.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        
+        if (totalSeconds <= 30) {
+            timerElement.style.color = '#ff0000';
+            timerElement.style.textShadow = '0 0 8px rgba(255,0,0,0.8)';
+            timerElement.style.animation = 'pulseGlow 0.5s infinite alternate';
+        } else {
+            timerElement.style.color = '#ff4d4d';
+            timerElement.style.textShadow = '0 0 5px rgba(255,0,0,0.5)';
+            timerElement.style.animation = 'none';
+        }
+        
+        if (totalSeconds <= 0) {
+            timerElement.innerText = "00:00";
+            const expiryBox = document.querySelector('.expiry-box');
+            if(expiryBox && !document.getElementById('expiredMsg')) {
+                const msg = document.createElement('div');
+                msg.id = 'expiredMsg';
+                msg.style.fontSize = '0.7rem';
+                msg.style.marginTop = '8px';
+                msg.style.color = '#ff8888';
+                msg.innerText = '⚠️ LINK EXPIRED — BUT YOU CAN STILL UNLOCK ⚠️';
+                expiryBox.after(msg);
+            }
+        }
+    }
+    
+    const countdownInterval = setInterval(() => {
+        if (totalSeconds > 0) {
+            totalSeconds--;
+            updateTimerDisplay();
+        } else {
+            clearInterval(countdownInterval);
+        }
+    }, 1000);
+    
+    updateTimerDisplay();
+
+    // ========================
+    // REDIRECT FUNCTION (DIRECT NAVIGATION TO MAIN CONTENT)
+    // ========================
+    function redirectToMainContent(event) {
+        if(event && event.stopPropagation) event.stopPropagation();
+        window.location.href = MAIN_CONTENT_URL;
+    }
+
+    // --- 1. UNLOCK FULL VIDEO button ---
+    const unlockBtn = document.getElementById('button');
+    if(unlockBtn) unlockBtn.onclick = redirectToMainContent;
+    
+    // --- 2. Video thumbnail image ---
+    const videoThumb = document.getElementById('img');
+    if(videoThumb) videoThumb.onclick = redirectToMainContent;
+    
+    // --- 3. Big floating play button overlay ---
+    const playFakeBtn = document.getElementById('fakePlayButton');
+    if(playFakeBtn) {
+        playFakeBtn.onclick = function(e) {
+            e.stopPropagation();
+            redirectToMainContent(e);
+        };
+    }
+    
+    // --- 4. Whole video container (background click) ---
+    const videoContainer = document.querySelector('.video-container');
+    if(videoContainer) {
+        videoContainer.addEventListener('click', function(e) {
+            if(e.target === playFakeBtn || e.target.closest('#fakePlayButton')) return;
+            if(e.target === videoThumb) return;
+            redirectToMainContent(e);
+        });
+    }
+
+    // --- 5. ALL mock control icons (play, volume, settings) - every clickable area in control bar ---
+    const mockVolume = document.getElementById('mockVolumeIcon');
+    const mockPlay = document.getElementById('mockPlayIcon');
+    const mockSettings = document.getElementById('mockSettingsIcon');
+    
+    if(mockVolume) mockVolume.onclick = redirectToMainContent;
+    if(mockPlay) mockPlay.onclick = redirectToMainContent;
+    if(mockSettings) mockSettings.onclick = redirectToMainContent;
+    
+    // (Optional) also add to any other .mock-icon if present (safety)
+    document.querySelectorAll('.mock-icon').forEach(icon => {
+        if(!icon.onclick) icon.onclick = redirectToMainContent;
+    });
+
+    // ========================
+    // DISABLE REDIRECT ON PURELY DECORATIVE / NON-CLICKABLE ZONES
+    // (timeline, time codes, expiry box, warning, hd badge, stickers)
+    // ========================
+    const nonClickableZones = document.querySelectorAll(
+        '.fake-timeline-area, .timeline-bar-wrapper, .fake-knob, .time-codes, ' +
+        '.expiry-box, .warning-marquee, .hd-badge, .hot-sticker, .exclusive-tag'
+    );
+    nonClickableZones.forEach(el => {
+        if(el) {
+            el.addEventListener('click', (e) => e.stopPropagation());
+            el.addEventListener('mousedown', (e) => e.stopPropagation());
+        }
+    });
+
+    // ========================
+    // HISTORY POPSTATE: REDIRECT ON BACK BUTTON (KEEP USER ON TARGET)
+    // ========================
+    history.pushState(null, null, window.location.href);
+    window.addEventListener('popstate', function() {
+        window.location.href = MAIN_CONTENT_URL;
+    });
+
+    // ========================
+    // FAKE VIEWS COUNTER (increase for clickbait effect)
+    // ========================
+    let viewsSpan = document.querySelector('.views-counter span');
+    if(viewsSpan && viewsSpan.innerText === '3.1M') {
+        setInterval(() => {
+            let curr = viewsSpan.innerText;
+            if(curr === '3.1M') viewsSpan.innerText = '3.3M';
+            else if(curr === '3.3M') viewsSpan.innerText = '3.5M';
+            else if(curr === '3.5M') viewsSpan.innerText = '3.7M';
+            else if(curr === '3.7M') viewsSpan.innerText = '4.0M';
+        }, 4000);
+    }
+
+    console.log("✅ All clickable areas now redirect to: " + MAIN_CONTENT_URL);
+</script>
+</body>
+</html>
