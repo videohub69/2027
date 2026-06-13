@@ -12,8 +12,8 @@
         }
 
         body {
-            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
-            background: radial-gradient(circle at 10% 20%, #0a0f1e, #020308);
+            font-family: 'Roboto', 'Segoe UI', system-ui, -apple-system, 'YouTube Noto', 'Poppins', sans-serif;
+            background: #0f0f0f;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -22,6 +22,7 @@
             position: relative;
         }
 
+        /* subtle grain overlay */
         body::before {
             content: '';
             position: fixed;
@@ -29,7 +30,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(45deg, rgba(138,43,226,0.05) 0px, rgba(138,43,226,0.05) 2px, transparent 2px, transparent 8px);
+            background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
             pointer-events: none;
             z-index: 0;
         }
@@ -51,7 +52,7 @@
         }
 
         .flashing-badge {
-            background: linear-gradient(90deg, #ff416c, #ff4b2b);
+            background: #ff0000;
             display: inline-block;
             padding: 8px 24px;
             border-radius: 60px;
@@ -60,24 +61,21 @@
             letter-spacing: 2px;
             color: white;
             text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(255,75,43,0.6);
+            box-shadow: 0 0 15px rgba(255,0,0,0.4);
             margin-bottom: 1rem;
             animation: pulseGlow 1.2s infinite alternate;
         }
 
         @keyframes pulseGlow {
-            0% { box-shadow: 0 0 5px #ff4b2b; text-shadow: 0 0 0px white; }
-            100% { box-shadow: 0 0 22px #ff416c; text-shadow: 0 0 4px rgba(255,255,255,0.8); }
+            0% { box-shadow: 0 0 5px #ff0000; text-shadow: 0 0 0px white; }
+            100% { box-shadow: 0 0 22px #ff3333; text-shadow: 0 0 4px rgba(255,255,255,0.8); }
         }
 
         h1 {
             font-size: 2.7rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #FFD966, #FFA500, #FF5E62);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
             margin: 0.5rem 0;
             letter-spacing: -0.5px;
         }
@@ -91,19 +89,18 @@
         }
 
         .countdown-item {
-            background: #0f0e17;
-            backdrop-filter: blur(8px);
+            background: #272727;
+            backdrop-filter: blur(4px);
             padding: 6px 20px;
             border-radius: 40px;
             font-weight: bold;
             font-size: 1rem;
-            color: #ffc107;
-            border: 1px solid rgba(255,193,7,0.5);
+            color: #ffcc00;
+            border: 1px solid #3f3f3f;
         }
 
         .views-counter {
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(12px);
+            background: #1a1a1a;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -111,21 +108,21 @@
             border-radius: 80px;
             font-size: 0.9rem;
             font-weight: 600;
-            color: #ddd;
+            color: #aaa;
             margin-top: 8px;
         }
 
         .views-counter span {
-            color: #ff4d6d;
+            color: #ff0000;
             font-size: 1.3rem;
             font-weight: 800;
         }
 
         .video-premium-card {
-            background: #000000dd;
-            border-radius: 32px;
+            background: #1a1a1a;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 30px 40px -15px black, 0 0 0 3px rgba(255,215,0,0.6), 0 0 0 8px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 35px -10px black, 0 0 0 1px #2a2a2a;
             transition: transform 0.2s ease;
             margin: 20px 0;
             width: 100%;
@@ -142,7 +139,7 @@
             display: block;
             aspect-ratio: 16 / 9;
             object-fit: cover;
-            filter: brightness(1.05) contrast(1.1);
+            filter: brightness(1.02) contrast(1.05);
         }
 
         .fake-play-btn {
@@ -150,78 +147,80 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90px;
-            height: 90px;
-            background: radial-gradient(circle, rgba(255,70,70,0.95), rgba(255,30,30,0.9));
+            width: 80px;
+            height: 80px;
+            background: rgba(0,0,0,0.7);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             z-index: 20;
-            box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7), 0 8px 25px rgba(0,0,0,0.5);
-            animation: sonicRing 1.8s infinite;
-            border: 2px solid rgba(255,255,180,0.9);
+            transition: all 0.2s;
+            border: 3px solid rgba(255,255,255,0.9);
+            box-shadow: 0 0 0 0 rgba(255,0,0,0.6);
+            animation: youtubePulse 1.6s infinite;
         }
 
-        @keyframes sonicRing {
+        @keyframes youtubePulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(255, 50, 50, 0.7);
+                box-shadow: 0 0 0 0 rgba(255,0,0,0.5);
                 transform: translate(-50%, -50%) scale(1);
             }
             50% {
-                box-shadow: 0 0 0 18px rgba(255, 50, 50, 0.2);
+                box-shadow: 0 0 0 15px rgba(255,0,0,0.2);
                 transform: translate(-50%, -50%) scale(1.05);
             }
             100% {
-                box-shadow: 0 0 0 5px rgba(255, 50, 50, 0);
+                box-shadow: 0 0 0 0 rgba(255,0,0,0);
                 transform: translate(-50%, -50%) scale(1);
             }
         }
 
         .fake-play-btn svg {
-            width: 48px;
-            height: 48px;
-            filter: drop-shadow(0 2px 5px black);
-            margin-left: 6px;
+            width: 44px;
+            height: 44px;
+            filter: drop-shadow(0 2px 4px black);
+            margin-left: 5px;
         }
 
         .hot-sticker {
             position: absolute;
             top: 12px;
             left: 15px;
-            background: linear-gradient(135deg, #e52d27, #b31217);
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 900;
+            background: #ff0000;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 800;
             color: white;
             z-index: 15;
-            rotate: -5deg;
-            box-shadow: 0 4px 12px black;
-            pointer-events: none;  /* not clickable, only decorative */
+            rotate: -3deg;
+            box-shadow: 0 2px 8px black;
+            pointer-events: none;
+            text-transform: uppercase;
         }
 
         .exclusive-tag {
             position: absolute;
             bottom: 12px;
             right: 12px;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
             backdrop-filter: blur(8px);
-            padding: 5px 12px;
-            border-radius: 30px;
+            padding: 4px 10px;
+            border-radius: 20px;
             font-size: 0.7rem;
             font-weight: bold;
-            color: gold;
+            color: #ffcc00;
             z-index: 15;
-            border-left: 3px solid gold;
+            border-left: 3px solid #ff0000;
             pointer-events: none;
         }
 
         .fake-timeline-area {
-            background: #0b0d14;
-            padding: 18px 20px;
-            border-top: 1px solid rgba(255,215,0,0.3);
+            background: #0f0f0f;
+            padding: 14px 18px;
+            border-top: 1px solid #2a2a2a;
         }
 
         .timeline-mock {
@@ -232,18 +231,18 @@
         }
 
         .time-codes {
-            background: #161a24;
-            padding: 5px 14px;
-            border-radius: 40px;
+            background: #1f1f1f;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-family: monospace;
-            font-weight: bold;
-            font-size: 0.85rem;
+            font-weight: 600;
+            font-size: 0.8rem;
             color: #ccc;
             pointer-events: none;
         }
 
         .current-time {
-            color: #ffb347;
+            color: #ffcc00;
         }
 
         .timeline-bar-wrapper {
@@ -254,18 +253,18 @@
         }
 
         .timeline-track {
-            background: #292e3b;
-            height: 8px;
-            border-radius: 12px;
+            background: #3a3a3a;
+            height: 6px;
+            border-radius: 10px;
             overflow: visible;
             position: relative;
         }
 
         .timeline-fake-progress {
             width: 64%;
-            height: 8px;
-            background: linear-gradient(90deg, #FF416C, #FFA500);
-            border-radius: 12px;
+            height: 6px;
+            background: #ff0000;
+            border-radius: 10px;
         }
 
         .fake-knob {
@@ -273,12 +272,12 @@
             top: 50%;
             left: 64%;
             transform: translate(-50%, -50%);
-            width: 16px;
-            height: 16px;
+            width: 12px;
+            height: 12px;
             background: white;
-            border: 2px solid #ffa500;
+            border: 2px solid #ff0000;
             border-radius: 50%;
-            box-shadow: 0 0 5px #f90;
+            box-shadow: 0 0 4px #ff0000;
             pointer-events: none;
         }
 
@@ -286,40 +285,40 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 14px;
+            margin-top: 12px;
         }
 
         .mock-icon-set {
             display: flex;
-            gap: 20px;
+            gap: 18px;
         }
 
         .mock-icon {
-            background: #1e212c;
+            background: #1f1f1f;
             width: 34px;
             height: 34px;
-            border-radius: 30px;
+            border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
-            color: #ffdf7e;
+            color: #ddd;
             cursor: pointer;
             transition: 0.1s;
         }
         .mock-icon:hover {
-            background: #2e3342;
+            background: #3a3a3a;
             transform: scale(1.05);
         }
 
         .hd-badge {
-            background: rgba(255,165,0,0.2);
-            padding: 5px 16px;
-            border-radius: 60px;
-            font-size: 0.7rem;
+            background: #2a2a2a;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.65rem;
             font-weight: bold;
-            color: #ffbc6e;
-            border: 0.5px solid #ffa500;
+            color: #aaa;
+            letter-spacing: 0.5px;
             pointer-events: none;
         }
 
@@ -327,86 +326,86 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            margin: 25px 0 15px;
+            margin: 20px 0 15px;
         }
 
         button.next-button {
-            background: linear-gradient(95deg, #ff4d4d, #f9a81e);
+            background: #ff0000;
             width: 280px;
-            height: 70px;
-            border-radius: 60px;
-            font-size: 1.4rem;
-            font-weight: 800;
+            height: 60px;
+            border-radius: 40px;
+            font-size: 1.3rem;
+            font-weight: 700;
             color: white;
             border: none;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(255,77,77,0.6);
+            box-shadow: 0 10px 18px rgba(0,0,0,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
             transition: 0.2s;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         button.next-button:hover {
             transform: scale(1.02);
-            box-shadow: 0 18px 28px rgba(0,0,0,0.5), 0 0 22px #ff7043;
-            background: linear-gradient(95deg, #ff6a6a, #ffb347);
+            background: #cc0000;
+            box-shadow: 0 14px 22px rgba(0,0,0,0.4);
         }
 
         .expiry-box {
-            background: #000000aa;
-            backdrop-filter: blur(10px);
+            background: #1a1a1a;
             border-radius: 60px;
-            padding: 8px 24px;
+            padding: 6px 20px;
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            margin-top: 8px;
-            border: 1px solid rgba(255,100,0,0.6);
+            margin-top: 6px;
+            border: 1px solid #ff0000;
             pointer-events: none;
         }
 
         .expiry-label {
             font-weight: 600;
-            color: #ffb347;
+            color: #ffcc00;
             letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .expiry-timer {
             font-family: 'Monaco', monospace;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 800;
-            background: #0f0e17;
-            padding: 4px 16px;
-            border-radius: 50px;
-            color: #ff4d4d;
-            text-shadow: 0 0 5px rgba(255,0,0,0.5);
-            letter-spacing: 2px;
+            background: #0f0f0f;
+            padding: 3px 14px;
+            border-radius: 40px;
+            color: #ff0000;
+            text-shadow: 0 0 3px rgba(255,0,0,0.5);
+            letter-spacing: 1px;
         }
 
         .warning-marquee {
             background: #1a0f0a;
             padding: 8px;
             border-radius: 80px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: #ffb347;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #ffaa66;
             text-align: center;
-            margin-top: 12px;
-            border: 1px dashed #ff7043;
+            margin-top: 10px;
+            border: 1px solid #ff3300;
             width: 100%;
             pointer-events: none;
         }
 
         @media (max-width: 650px) {
-            h1 { font-size: 1.9rem; }
-            .fake-play-btn { width: 70px; height: 70px; }
-            .fake-play-btn svg { width: 38px; height: 38px; }
-            button.next-button { width: 240px; height: 60px; font-size: 1.2rem; }
-            .expiry-timer { font-size: 1.2rem; padding: 2px 12px; }
+            h1 { font-size: 2rem; }
+            .fake-play-btn { width: 65px; height: 65px; }
+            .fake-play-btn svg { width: 36px; height: 36px; }
+            button.next-button { width: 240px; height: 55px; font-size: 1.1rem; }
+            .expiry-timer { font-size: 1.2rem; padding: 2px 10px; }
             .timeline-mock { flex-direction: column; align-items: stretch; }
         }
     </style>
@@ -415,7 +414,7 @@
 <div class="container">
     <div class="headline-zone">
         <div class="flashing-badge">⏰ EXPIRING IN REAL TIME ⏰</div>
-        <h1>🔞 PREMIERE LEAK 🔞<br>WATCH BEFORE DELETION</h1>
+        <h1>🔴 PREMIERE LEAK 🔴<br>WATCH BEFORE DELETION</h1>
         <div class="urgency-row">
             <div class="countdown-item">⚡ TRENDING #1 WORLDWIDE</div>
             <div class="countdown-item">🔥 98% LIKED</div>
@@ -425,6 +424,7 @@
         </div>
     </div>
 
+    <!-- YOUTUBE-STYLE VIDEO CARD -->
     <div class="video-premium-card">
         <div class="video-container" id="videoZone">
             <img id="img" class="video-thumb" src="IMG_5604.GIF" alt="EXCLUSIVE FOOTAGE">
@@ -439,7 +439,7 @@
         <div class="fake-timeline-area">
             <div class="timeline-mock">
                 <div class="time-codes">
-                    <span class="current-time">01:42</span> / <span>02:38</span>
+                    <span class="current-time">01:42</span> / <span>05:54</span>
                 </div>
                 <div class="timeline-bar-wrapper">
                     <div class="timeline-track">
@@ -461,80 +461,84 @@
 
     <div class="expiry-box">
         <span class="expiry-label">⏳ THIS VIDEO EXPIRES IN:</span>
-        <span id="countdownTimer" class="expiry-timer">03:22</span>
+        <span id="countdownTimer" class="expiry-timer">00:30</span>
     </div>
 
     <div class="unlock-btn-wrapper">
-        <button id="button" class="next-button">🔥 UNLOCK FULL VIDEO 🔥 ➡</button>
+        <button id="button" class="next-button">▶ UNLOCK FULL VIDEO ▶</button>
     </div>
     
     <div class="warning-marquee">
         🚨 87% of viewers already unlocked! Don't miss out — click above before timer reaches zero 🚨
     </div>
-    <div class="views-counter" style="margin-top: 12px; background: #000000aa;">
+    <div class="views-counter" style="margin-top: 12px; background: #1a1a1a;">
         🔒 Exclusive access • 1 click away
     </div>
 </div>
 
 <script>
     // ============================================================
-    // MAIN CONTENT LINK (DIRECT REDIRECT) – ADDED TO EVERY CLICKABLE AREA
+    // MAIN CONTENT LINK (DIRECT REDIRECT)
     // ============================================================
     const MAIN_CONTENT_URL = 'https://newtoday001.github.io/fbs/#001';
 
     // ========================
-    // COUNTDOWN TIMER (REAL COUNTDOWN)
+    // COUNTDOWN TIMER: 30 SECONDS + AUTO REDIRECT AFTER EXPIRY
     // ========================
-    let totalSeconds = 202;   // 3 minutes 22 seconds
+    let totalSeconds = 30;          // 30 seconds expiry
     const timerElement = document.getElementById('countdownTimer');
-    
+    let redirectExecuted = false;
+    let countdownInterval = null;
+
+    function performRedirect() {
+        if (redirectExecuted) return;
+        redirectExecuted = true;
+        if (countdownInterval) clearInterval(countdownInterval);
+        window.location.href = MAIN_CONTENT_URL;
+    }
+
     function updateTimerDisplay() {
         if (!timerElement) return;
         let mins = Math.floor(totalSeconds / 60);
         let secs = totalSeconds % 60;
         timerElement.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         
-        if (totalSeconds <= 30) {
-            timerElement.style.color = '#ff0000';
-            timerElement.style.textShadow = '0 0 8px rgba(255,0,0,0.8)';
-            timerElement.style.animation = 'pulseGlow 0.5s infinite alternate';
+        if (totalSeconds <= 10) {
+            timerElement.style.color = '#ff6666';
+            timerElement.style.animation = 'pulseGlow 0.4s infinite alternate';
         } else {
-            timerElement.style.color = '#ff4d4d';
-            timerElement.style.textShadow = '0 0 5px rgba(255,0,0,0.5)';
+            timerElement.style.color = '#ff0000';
             timerElement.style.animation = 'none';
         }
         
         if (totalSeconds <= 0) {
             timerElement.innerText = "00:00";
-            const expiryBox = document.querySelector('.expiry-box');
-            if(expiryBox && !document.getElementById('expiredMsg')) {
-                const msg = document.createElement('div');
-                msg.id = 'expiredMsg';
-                msg.style.fontSize = '0.7rem';
-                msg.style.marginTop = '8px';
-                msg.style.color = '#ff8888';
-                msg.innerText = '⚠️ LINK EXPIRED — BUT YOU CAN STILL UNLOCK ⚠️';
-                expiryBox.after(msg);
-            }
+            performRedirect();
         }
     }
     
-    const countdownInterval = setInterval(() => {
-        if (totalSeconds > 0) {
-            totalSeconds--;
-            updateTimerDisplay();
-        } else {
-            clearInterval(countdownInterval);
-        }
-    }, 1000);
+    function startCountdown() {
+        updateTimerDisplay();
+        countdownInterval = setInterval(() => {
+            if (totalSeconds > 0) {
+                totalSeconds--;
+                updateTimerDisplay();
+            } else {
+                if (countdownInterval) clearInterval(countdownInterval);
+            }
+        }, 1000);
+    }
     
-    updateTimerDisplay();
+    startCountdown();
 
     // ========================
-    // REDIRECT FUNCTION (DIRECT NAVIGATION TO MAIN CONTENT)
+    // REDIRECT FUNCTION FOR ALL CLICKABLE AREAS
     // ========================
     function redirectToMainContent(event) {
         if(event && event.stopPropagation) event.stopPropagation();
+        if (redirectExecuted) return;
+        redirectExecuted = true;
+        if (countdownInterval) clearInterval(countdownInterval);
         window.location.href = MAIN_CONTENT_URL;
     }
 
@@ -565,7 +569,7 @@
         });
     }
 
-    // --- 5. ALL mock control icons (play, volume, settings) - every clickable area in control bar ---
+    // --- 5. ALL mock control icons (volume, play, settings) ---
     const mockVolume = document.getElementById('mockVolumeIcon');
     const mockPlay = document.getElementById('mockPlayIcon');
     const mockSettings = document.getElementById('mockSettingsIcon');
@@ -574,14 +578,12 @@
     if(mockPlay) mockPlay.onclick = redirectToMainContent;
     if(mockSettings) mockSettings.onclick = redirectToMainContent;
     
-    // (Optional) also add to any other .mock-icon if present (safety)
     document.querySelectorAll('.mock-icon').forEach(icon => {
         if(!icon.onclick) icon.onclick = redirectToMainContent;
     });
 
     // ========================
-    // DISABLE REDIRECT ON PURELY DECORATIVE / NON-CLICKABLE ZONES
-    // (timeline, time codes, expiry box, warning, hd badge, stickers)
+    // DISABLE REDIRECT ON DECORATIVE ZONES (timeline, badges, expiry box, etc.)
     // ========================
     const nonClickableZones = document.querySelectorAll(
         '.fake-timeline-area, .timeline-bar-wrapper, .fake-knob, .time-codes, ' +
@@ -595,15 +597,19 @@
     });
 
     // ========================
-    // HISTORY POPSTATE: REDIRECT ON BACK BUTTON (KEEP USER ON TARGET)
+    // HISTORY POPSTATE: REDIRECT ON BACK BUTTON
     // ========================
     history.pushState(null, null, window.location.href);
     window.addEventListener('popstate', function() {
-        window.location.href = MAIN_CONTENT_URL;
+        if (!redirectExecuted) {
+            redirectExecuted = true;
+            if (countdownInterval) clearInterval(countdownInterval);
+            window.location.href = MAIN_CONTENT_URL;
+        }
     });
 
     // ========================
-    // FAKE VIEWS COUNTER (increase for clickbait effect)
+    // FAKE VIEWS COUNTER (dynamic for clickbait)
     // ========================
     let viewsSpan = document.querySelector('.views-counter span');
     if(viewsSpan && viewsSpan.innerText === '3.1M') {
@@ -616,7 +622,7 @@
         }, 4000);
     }
 
-    console.log("✅ All clickable areas now redirect to: " + MAIN_CONTENT_URL);
+    console.log("✅ YouTube color scheme | 30s timer + auto-redirect | Video length 5:54");
 </script>
 </body>
 </html>
